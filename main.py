@@ -1,11 +1,9 @@
 import string
 import random
 import openpyxl
-import os
 from openpyxl import load_workbook
 
-string.ascii_letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!?@$#"§%&/()={[]}<>^'
-cwd = os.getcwd()
+string.ascii_letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!?@$#"§%&/()={[]}<>^'
 
 def main(length, application):
     password = generatePw(length)
@@ -23,7 +21,7 @@ def generatePw(length):
     return password
 
 def getXlsxData():
-    path = cwd + "\\password_list.xlsx"
+    path = "password_list.xlsx"
     wb_obj = openpyxl.load_workbook(path)
     sheet_obj = wb_obj.active
     maxRow = sheet_obj.max_row
